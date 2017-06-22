@@ -122,7 +122,7 @@ dependencies {
 
     compile 'commons-logging:commons-logging:1.2'
 
-    compile 'org.apache.commons:commons-lang3:3.5'
+    compile 'org.apache.commons:commons-lang3:3.6'
 
     compile 'org.jsoup:jsoup:1.10.3'
 
@@ -151,7 +151,7 @@ dependencies {
     compile "com.github.wnameless:json-flattener:0.4.0"
 
     testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:2.8.9'
+    testCompile 'org.mockito:mockito-core:2.8.47'
     testCompile 'com.github.tomakehurst:wiremock:2.6.0'
     testCompile 'org.assertj:assertj-swing-junit:3.6.0'
     testCompile 'org.reflections:reflections:0.9.11'

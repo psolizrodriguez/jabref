@@ -1,0 +1,26 @@
+package org.jabref.gui.actions;
+
+import java.awt.event.ActionEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+
+import org.jabref.Globals;
+import org.jabref.logic.sharelatex.ShareLatexManager;
+
+public class SendChangesToShareLatexAction extends AbstractAction {
+
+    public SendChangesToShareLatexAction() {
+        super();
+        putValue(Action.NAME, "Send changes to ShareLatex Server");
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        ShareLatexManager manager = Globals.shareLatexManager;
+
+    }
+
+}

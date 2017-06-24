@@ -1059,6 +1059,8 @@ public class JabRefFrame extends JFrame implements OutputPrinter {
         file.addSeparator();
         file.add(connectToSharedDatabaseAction);
         file.add(pullChangesFromSharedDatabase);
+        file.addSeparator();
+        file.add(manageSharelatex);
 
         file.addSeparator();
         file.add(databaseProperties);
@@ -1251,7 +1253,6 @@ public class JabRefFrame extends JFrame implements OutputPrinter {
         options.add(keyBindingAction);
         options.add(protectTerms);
         options.add(manageSelectors);
-        options.add(manageSharelatex);
         mb.add(options);
 
         helpMenu.add(help);

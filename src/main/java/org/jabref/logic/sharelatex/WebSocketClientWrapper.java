@@ -23,6 +23,7 @@ import org.jabref.model.entry.BibEntry;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.glassfish.tyrus.client.ClientManager;
+import org.glassfish.tyrus.client.ClientProperties;
 
 public class WebSocketClientWrapper {
 
@@ -55,7 +56,10 @@ public class WebSocketClientWrapper {
             this.projectId = projectId;
             final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create()
                     .preferredSubprotocols(Arrays.asList("mqttt")).build();
+
+
             ClientManager client = ClientManager.createClient();
+            client.getProperties().put(ClientProperties.REDIRECT_ENABLED, true);
 
             this.session = client.connectToServer(new Endpoint() {
 
@@ -66,6 +70,12 @@ public class WebSocketClientWrapper {
                         parseContents(message);
 
                     });
+                }
+
+                @Override
+                public void onError(Session session, Throwable t) {
+
+                    t.printStackTrace();
                 }
             }, cec, webSocketchannelUri);
 

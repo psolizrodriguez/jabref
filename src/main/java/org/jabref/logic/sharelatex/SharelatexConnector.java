@@ -111,6 +111,7 @@ public class SharelatexConnector {
         long millis = System.currentTimeMillis();
         System.out.println(millis);
         String socketioUrl = server + "/socket.io/1";
+        String scheme = server.contains("https://") ? "wss" : "ws";
         try {
             Connection.Response webSocketresponse = Jsoup.connect(socketioUrl)
                     .cookies(loginCookies)
@@ -121,7 +122,7 @@ public class SharelatexConnector {
             String resp = webSocketresponse.body();
             String channel = resp.substring(0, resp.indexOf(":"));
 
-            URI webSocketchannelUri = new URIBuilder(socketioUrl + "/websocket/" + channel).setScheme("ws").build();
+            URI webSocketchannelUri = new URIBuilder(socketioUrl + "/websocket/" + channel).setScheme(scheme).build();
             System.out.println("WebSocketChannelUrl " + webSocketchannelUri);
             client.setImportFormatPrefs(prefs);
             client.createAndConnect(webSocketchannelUri, projectId, database);

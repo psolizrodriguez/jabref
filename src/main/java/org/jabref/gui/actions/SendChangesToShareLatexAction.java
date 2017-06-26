@@ -6,6 +6,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 
 import org.jabref.Globals;
+import org.jabref.gui.StateManager;
 import org.jabref.logic.sharelatex.ShareLatexManager;
 
 public class SendChangesToShareLatexAction extends AbstractAction {
@@ -20,7 +21,9 @@ public class SendChangesToShareLatexAction extends AbstractAction {
     public void actionPerformed(ActionEvent e) {
 
         ShareLatexManager manager = Globals.shareLatexManager;
-
+        StateManager stateManager = Globals.stateManager;
+        manager.sendNewDataseContent(stateManager.getActiveDatabase().get());
+        System.out.println("Send changes");
     }
 
 }

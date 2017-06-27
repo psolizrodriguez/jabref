@@ -40,8 +40,7 @@ public class ShareLatexJsonMessage {
 
     public String createUpdateMessageAsInsertOrDelete(String docId, int version, List<SharelatexDoc> docs) {
         JsonArray opArray = new JsonArray();
-        for (SharelatexDoc doc : docs)
-        {
+        for (SharelatexDoc doc : docs) {
             JsonObject deleteOrInsertContent = new JsonObject();
             deleteOrInsertContent.addProperty("p", doc.getPosition());
             deleteOrInsertContent.addProperty(doc.getOperation(), doc.getContent());

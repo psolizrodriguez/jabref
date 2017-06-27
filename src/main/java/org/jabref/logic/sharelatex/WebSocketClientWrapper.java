@@ -57,7 +57,6 @@ public class WebSocketClientWrapper {
             final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create()
                     .preferredSubprotocols(Arrays.asList("mqttt")).build();
 
-
             ClientManager client = ClientManager.createClient();
             client.getProperties().put(ClientProperties.REDIRECT_ENABLED, true);
 
@@ -120,7 +119,10 @@ public class WebSocketClientWrapper {
 
     private void sendUpdateAsDeleteAndInsert(String docId, int position, int version, String oldContent, String newContent) throws IOException {
         ShareLatexJsonMessage message = new ShareLatexJsonMessage();
-        String str = message.createDeleteInsertMessage(docId, position, version, oldContent, newContent);
+
+        List<SharelatexDoc> diffDocs = parser.generateDiffs(oldContent, newContent);
+        String str = message.createUpdateMessageAsInsertOrDelete(docId, version, diffDocs);
+
         System.out.println("Send new update Message");
 
         session.getBasicRemote().sendText("5:::" + str);

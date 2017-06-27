@@ -2,6 +2,7 @@ package org.jabref.logic.sharelatex;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,8 +71,11 @@ public class ShareLatexManager {
     public void sendNewDataseContent(BibDatabaseContext database) {
         try {
             BibtexDatabaseWriter<StringSaveSession> databaseWriter = new BibtexDatabaseWriter<>(StringSaveSession::new);
-            StringSaveSession saveSession = databaseWriter.saveDatabase(database, new SavePreferences());
+            SavePreferences preferences = new SavePreferences().withEncoding(StandardCharsets.UTF_8).withSaveInOriginalOrder(true);
+            StringSaveSession saveSession = databaseWriter.saveDatabase(database, preferences);
             String updatedcontent = saveSession.getStringValue().replace("\r\n", "\n");
+
+
 
             connector.sendNewDatabaseContent(updatedcontent);
         } catch (InterruptedException | SaveException e) {

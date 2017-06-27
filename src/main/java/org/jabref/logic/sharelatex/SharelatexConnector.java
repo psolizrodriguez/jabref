@@ -135,6 +135,7 @@ public class SharelatexConnector {
     }
 
     public void sendNewDatabaseContent(String newContent) throws InterruptedException {
+
         client.sendNewDatabaseContent(newContent);
     }
 

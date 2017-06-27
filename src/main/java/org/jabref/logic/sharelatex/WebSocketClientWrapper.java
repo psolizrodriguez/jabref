@@ -139,6 +139,7 @@ public class WebSocketClientWrapper {
                 }
             } catch (IOException | InterruptedException e) {
                 // TODO Auto-generated catch block
+                Thread.currentThread().interrupt();
                 e.printStackTrace();
             }
         });

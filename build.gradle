@@ -149,6 +149,7 @@ dependencies {
     compile "com.google.code.gson:gson:2.8.0"
     compile "net.sourceforge.htmlunit:htmlunit:2.26"
     compile "com.github.wnameless:json-flattener:0.4.0"
+	compile "org.bitbucket.cowwoc:diff-match-patch:1.1"
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.8.47'

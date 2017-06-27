@@ -1,5 +1,7 @@
 package org.jabref.logic.sharelatex;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -15,6 +17,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch;
+import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Diff;
+import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation;
 
 public class ShareLatexParser {
 
@@ -178,5 +183,46 @@ public class ShareLatexParser {
         });
 
         return bibFileWithId;
+    }
+
+    public List<SharelatexDoc> generateDiffs(String before, String after) {
+        DiffMatchPatch patch = new DiffMatchPatch();
+        LinkedList<Diff> diffs = patch.diffMain(before, after);
+        patch.diffCleanupSemantic(diffs);
+
+        int pos = 0;
+
+        List<SharelatexDoc> docsWithChanges = new ArrayList<>();
+
+        for(Diff d : diffs)
+        {
+
+            if(d.operation == Operation.INSERT)
+            {
+                SharelatexDoc doc = new SharelatexDoc();
+                doc.setPosition(pos);
+                doc.setContent(d.text);
+                doc.setOperation("i");
+                docsWithChanges.add(doc);
+                pos += d.text.length();
+            }
+            else if (d.operation == Operation.DELETE)
+            {
+                SharelatexDoc doc = new SharelatexDoc();
+                doc.setPosition(pos);
+                doc.setContent(d.text);
+                doc.setOperation("d");
+
+                docsWithChanges.add(doc);
+
+            }
+            else if (d.operation == Operation.EQUAL) {
+                pos += d.text.length();
+            }
+
+
+        }
+        return docsWithChanges;
+
     }
 }

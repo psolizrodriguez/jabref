@@ -93,4 +93,41 @@ public class ShareLatexParserTest {
         assertEquals(5, actual);
 
     }
+
+    @Test
+    public void testDiffStuff() {
+        String before = "hello world";
+        String after = "hello beautiful world";
+
+        ShareLatexParser parser = new ShareLatexParser();
+        List<SharelatexDoc> docs = parser.generateDiffs(before, after);
+
+        SharelatexDoc testDoc = new SharelatexDoc();
+        testDoc.setContent("beautiful ");
+        testDoc.setPosition(6);
+
+        assertEquals(testDoc.toString(), docs.get(0).toString());
+
+    }
+
+    @Test
+    public void testDiffStuffInsert2() {
+        String before = "the boy played with the ball";
+        String after = "the tall boy played with the red ball";
+
+        ShareLatexParser parser = new ShareLatexParser();
+        List<SharelatexDoc> docs = parser.generateDiffs(before, after);
+
+        SharelatexDoc testDoc = new SharelatexDoc();
+        testDoc.setContent("tall ");
+        testDoc.setPosition(4);
+
+        SharelatexDoc testDoc2 = new SharelatexDoc();
+        testDoc2.setContent("red ");
+        testDoc2.setPosition(29);
+
+        assertEquals(testDoc.toString(), docs.get(0).toString());
+        assertEquals(testDoc2.toString(), docs.get(1).toString());
+
+    }
 }

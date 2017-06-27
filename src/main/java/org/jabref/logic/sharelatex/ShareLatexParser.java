@@ -226,4 +226,5 @@ public class ShareLatexParser {
         return docsWithChanges;
 
     }
+
 }

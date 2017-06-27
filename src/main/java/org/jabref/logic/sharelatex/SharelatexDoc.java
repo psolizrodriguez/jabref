@@ -24,6 +24,10 @@ public class SharelatexDoc {
         this.position = position;
     }
 
+    public String getOperation() {
+        return operation;
+    }
+
     public void setOperation(String opType) {
         this.operation = opType;
     }

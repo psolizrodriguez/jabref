@@ -1,5 +1,7 @@
 package org.jabref.logic.sharelatex;
 
+import java.util.Objects;
+
 public class SharelatexDoc {
 
     private int position;
@@ -27,8 +29,29 @@ public class SharelatexDoc {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return position + " " + content;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        SharelatexDoc other = (SharelatexDoc) obj;
+
+        return Objects.equals(content, other.content) && Objects.equals(position, other.position);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(content, position);
+    }
+
 }

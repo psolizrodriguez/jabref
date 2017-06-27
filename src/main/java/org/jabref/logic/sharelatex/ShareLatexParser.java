@@ -187,6 +187,7 @@ public class ShareLatexParser {
 
     public List<SharelatexDoc> generateDiffs(String before, String after) {
         DiffMatchPatch patch = new DiffMatchPatch();
+
         LinkedList<Diff> diffs = patch.diffMain(before, after);
         patch.diffCleanupSemantic(diffs);
 

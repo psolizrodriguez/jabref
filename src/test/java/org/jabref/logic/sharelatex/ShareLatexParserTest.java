@@ -1,5 +1,6 @@
 package org.jabref.logic.sharelatex;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -95,7 +96,7 @@ public class ShareLatexParserTest {
     }
 
     @Test
-    public void testDiffStuff() {
+    public void testInsertNewText() {
         String before = "hello world";
         String after = "hello beautiful world";
 
@@ -106,28 +107,127 @@ public class ShareLatexParserTest {
         testDoc.setContent("beautiful ");
         testDoc.setPosition(6);
 
-        assertEquals(testDoc.toString(), docs.get(0).toString());
+        assertEquals(testDoc, docs.get(0));
 
     }
 
     @Test
-    public void testDiffStuffInsert2() {
+    public void testShiftLaterInsertsByPreviousInserts() {
         String before = "the boy played with the ball";
         String after = "the tall boy played with the red ball";
 
-        ShareLatexParser parser = new ShareLatexParser();
-        List<SharelatexDoc> docs = parser.generateDiffs(before, after);
-
+        List<SharelatexDoc> expected = new ArrayList<>();
         SharelatexDoc testDoc = new SharelatexDoc();
         testDoc.setContent("tall ");
         testDoc.setPosition(4);
+        expected.add(testDoc);
 
         SharelatexDoc testDoc2 = new SharelatexDoc();
         testDoc2.setContent("red ");
         testDoc2.setPosition(29);
+        expected.add(testDoc2);
 
-        assertEquals(testDoc.toString(), docs.get(0).toString());
-        assertEquals(testDoc2.toString(), docs.get(1).toString());
+        ShareLatexParser parser = new ShareLatexParser();
+        List<SharelatexDoc> docs = parser.generateDiffs(before, after);
+
+        assertEquals(expected, docs);
+    }
+
+    @Test
+    public void testDelete() {
+        String before = "hello beautiful world";
+        String after = "hello world";
+
+        SharelatexDoc testdoc = new SharelatexDoc();
+        testdoc.setContent("beautiful ");
+        testdoc.setPosition(6);
+
+        ShareLatexParser parser = new ShareLatexParser();
+        List<SharelatexDoc> docs = parser.generateDiffs(before, after);
+
+        assertEquals(testdoc, docs.get(0));
+
+    }
+
+    @Test
+    public void testShiftLaterDeleteByFirstDeletes() {
+
+        String before = "the tall boy played with the red ball";
+        String after = "the boy played with the ball";
+
+        List<SharelatexDoc> expected = new ArrayList<>();
+        SharelatexDoc testDoc = new SharelatexDoc();
+        testDoc.setContent("tall ");
+        testDoc.setPosition(4);
+        expected.add(testDoc);
+
+        SharelatexDoc testDoc2 = new SharelatexDoc();
+        testDoc2.setContent("red ");
+        testDoc2.setPosition(24);
+        expected.add(testDoc2);
+
+        ShareLatexParser parser = new ShareLatexParser();
+        List<SharelatexDoc> docs = parser.generateDiffs(before, after);
+        assertEquals(expected, docs);
+
+    }
+
+    @Test
+    public void testBibTexString() {
+        String bibTexBefore = "\n" +
+                "@Testcase{Sam2007,\n" +
+                "  year      = {2007},\n" +
+                "  author    = {Sam And jason},\n" +
+                "  file      = {:Huang2001 - Information Extraction from Voicemail.csv:csv},\n" +
+                "  issue     = {3},\n" +
+                "  journal   = {Wirtschaftsinformatik},\n" +
+                "  keywords  = {software development processes; agile software development environments; time-to-market; Extreme Programming; Crystal methods family; Adaptive Software Development},\n" +
+                "  language  = {english},\n" +
+                "  mrnumber  = {0937-6429},\n" +
+                "  owner     = {Christoph Schwentker},\n" +
+                "  pages     = {237--248},\n" +
+                "  publisher = {Gabler Verlag},\n" +
+                "  timestamp = {2016.08.20},\n" +
+                "  title     = {Agile Entwicklung Web-basierter Systeme},\n" +
+                "  url       = {http://dx.doi.org/10.1007/BF03250842},\n" +
+                "  volume    = {44},\n" +
+                "}\n" +
+                "";
+
+        String bibtexAfter = "\n" +
+                "@Testcase{Sam2007,\n" +
+                "  year      = {2007},\n" +
+                "  author    = {Sam And jason},\n" +
+                "  file      = {:Huang2001 - Information Extraction from Voicemail.csv:csv},\n" +
+                "  issue     = {3},\n" +
+                "  journal   = {Test},\n" +
+                "  keywords  = {software development processes; agile software development environments; time-to-market; Extreme Programming; Crystal methods family; Adaptive Software Development},\n" +
+                "  language  = {english},\n" +
+                "  mrnumber  = {0937-6429},\n" +
+                "  owner     = {Christoph Schwentker},\n" +
+                "  pages     = {237--248},\n" +
+                "  publisher = {Gabler Verlag},\n" +
+                "  timestamp = {2016.08.20},\n" +
+                "  title     = {Agile Entwicklung Web-basierter Systeme},\n" +
+                "  url       = {http://dx.doi.org/10.1007/BF03250842},\n" +
+                "  volume    = {44},\n" +
+                "}\n" +
+                "";
+
+        List<SharelatexDoc> expected = new ArrayList<>();
+        SharelatexDoc testDoc = new SharelatexDoc();
+        testDoc.setContent("Wirtschaftsinformatik");
+        testDoc.setPosition(183);
+        expected.add(testDoc);
+
+        SharelatexDoc testDoc2 = new SharelatexDoc();
+        testDoc2.setContent("Test");
+        testDoc2.setPosition(183);
+        expected.add(testDoc2);
+
+        ShareLatexParser parser = new ShareLatexParser();
+        List<SharelatexDoc> docs = parser.generateDiffs(bibTexBefore, bibtexAfter);
+        assertEquals(expected, docs);
 
     }
 }

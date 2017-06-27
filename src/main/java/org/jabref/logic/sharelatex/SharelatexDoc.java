@@ -6,7 +6,7 @@ public class SharelatexDoc {
 
     private int position;
     private String content;
-    private String op;
+    private String operation;
 
     public String getContent() {
         return content;
@@ -25,12 +25,12 @@ public class SharelatexDoc {
     }
 
     public void setOperation(String opType) {
-        this.op = opType;
+        this.operation = opType;
     }
 
     @Override
     public String toString() {
-        return position + " " + content;
+        return operation + " " + position + " " + content;
     }
 
     @Override
@@ -46,12 +46,12 @@ public class SharelatexDoc {
         }
         SharelatexDoc other = (SharelatexDoc) obj;
 
-        return Objects.equals(content, other.content) && Objects.equals(position, other.position);
+        return Objects.equals(content, other.content) && Objects.equals(position, other.position) && Objects.equals(operation, other.operation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content, position);
+        return Objects.hash(content, position, operation);
     }
 
 }

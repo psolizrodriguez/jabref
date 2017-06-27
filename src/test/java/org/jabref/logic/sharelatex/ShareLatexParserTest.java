@@ -106,6 +106,7 @@ public class ShareLatexParserTest {
         SharelatexDoc testDoc = new SharelatexDoc();
         testDoc.setContent("beautiful ");
         testDoc.setPosition(6);
+        testDoc.setOperation("i");
 
         assertEquals(testDoc, docs.get(0));
 
@@ -120,11 +121,14 @@ public class ShareLatexParserTest {
         SharelatexDoc testDoc = new SharelatexDoc();
         testDoc.setContent("tall ");
         testDoc.setPosition(4);
+        testDoc.setOperation("i");
         expected.add(testDoc);
 
         SharelatexDoc testDoc2 = new SharelatexDoc();
         testDoc2.setContent("red ");
         testDoc2.setPosition(29);
+        testDoc2.setOperation("i");
+
         expected.add(testDoc2);
 
         ShareLatexParser parser = new ShareLatexParser();
@@ -141,6 +145,7 @@ public class ShareLatexParserTest {
         SharelatexDoc testdoc = new SharelatexDoc();
         testdoc.setContent("beautiful ");
         testdoc.setPosition(6);
+        testdoc.setOperation("d");
 
         ShareLatexParser parser = new ShareLatexParser();
         List<SharelatexDoc> docs = parser.generateDiffs(before, after);
@@ -159,11 +164,13 @@ public class ShareLatexParserTest {
         SharelatexDoc testDoc = new SharelatexDoc();
         testDoc.setContent("tall ");
         testDoc.setPosition(4);
+        testDoc.setOperation("d");
         expected.add(testDoc);
 
         SharelatexDoc testDoc2 = new SharelatexDoc();
         testDoc2.setContent("red ");
         testDoc2.setPosition(24);
+        testDoc2.setOperation("d");
         expected.add(testDoc2);
 
         ShareLatexParser parser = new ShareLatexParser();
@@ -218,11 +225,13 @@ public class ShareLatexParserTest {
         SharelatexDoc testDoc = new SharelatexDoc();
         testDoc.setContent("Wirtschaftsinformatik");
         testDoc.setPosition(183);
+        testDoc.setOperation("d");
         expected.add(testDoc);
 
         SharelatexDoc testDoc2 = new SharelatexDoc();
         testDoc2.setContent("Test");
         testDoc2.setPosition(183);
+        testDoc2.setOperation("i");
         expected.add(testDoc2);
 
         ShareLatexParser parser = new ShareLatexParser();

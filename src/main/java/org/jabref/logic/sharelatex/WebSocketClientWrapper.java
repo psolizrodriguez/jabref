@@ -97,9 +97,10 @@ public class WebSocketClientWrapper {
                 @Override
                 public void onOpen(Session session, EndpointConfig config) {
                     session.addMessageHandler(String.class, (Whole<String>) message -> {
+
+                        message = parser.fixUTF8Strings(message);
                         System.out.println("Received message: " + message);
                         parseContents(message);
-
                     });
                 }
 

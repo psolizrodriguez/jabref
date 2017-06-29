@@ -1,5 +1,6 @@
 package org.jabref.logic.sharelatex;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -137,6 +138,17 @@ public class ShareLatexParser {
         }
 
         return joiner.toString();
+    }
+
+    /**
+     * Fixes wrongly encoded UTF-8 strings which were encoded into ISO-8859-1
+     * Workaround for server side bug
+     * @param wrongEncoded The wrongly encoded string
+     * @return The correct UTF-8 string
+     */
+    public String fixUTF8Strings(String wrongEncoded) {
+        String str = new String(wrongEncoded.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
+        return new String(str.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
     }
 
 }

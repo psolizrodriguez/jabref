@@ -1,5 +1,6 @@
 package org.jabref.logic.sharelatex;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,19 @@ import static org.junit.Assert.assertEquals;
 public class ShareLatexParserTest {
 
     private final ShareLatexParser parser = new ShareLatexParser();
+
+    @Test
+    public void testDoubleEncodeutf()
+    {
+        String wrongEncoded = "WrocÅawskiej";
+        String rightEncoded = "Wrocławskiej";
+
+        String str = new String(wrongEncoded.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
+        str = new String(str.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
+
+
+        // assertEquals(rightEncoded, str);
+    }
 
     @Test
     public void parseBibTexString() {

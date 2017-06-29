@@ -17,7 +17,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
 import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch;
 import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Diff;
 import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation;
@@ -139,4 +138,5 @@ public class ShareLatexParser {
 
         return joiner.toString();
     }
+
 }

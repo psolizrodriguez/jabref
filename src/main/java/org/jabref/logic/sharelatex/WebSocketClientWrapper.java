@@ -6,9 +6,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.websocket.ClientEndpointConfig;
+import javax.websocket.CloseReason;
 import javax.websocket.Endpoint;
 import javax.websocket.EndpointConfig;
 import javax.websocket.MessageHandler.Whole;
@@ -40,6 +43,7 @@ public class WebSocketClientWrapper {
     private String databaseName;
     private final EventBus eventBus = new EventBus("SharelatexEventBus");
     private boolean leftDoc = false;
+    private boolean errorReceived = false;
 
     private final BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
@@ -59,9 +63,34 @@ public class WebSocketClientWrapper {
             this.projectId = projectId;
             final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create()
                     .preferredSubprotocols(Arrays.asList("mqttt")).build();
+            final CountDownLatch messageLatch = new CountDownLatch(1);
 
             ClientManager client = ClientManager.createClient();
             client.getProperties().put(ClientProperties.REDIRECT_ENABLED, true);
+            ClientManager.ReconnectHandler reconnectHandler = new ClientManager.ReconnectHandler() {
+
+                private final AtomicInteger counter = new AtomicInteger(0);
+
+                @Override
+                public boolean onConnectFailure(Exception exception) {
+                    final int i = counter.incrementAndGet();
+                    if (i <= 3) {
+                        System.out.println(
+                                "### Reconnecting... (reconnect count: " + i + ") " + exception.getMessage());
+                        return true;
+                    } else {
+                        messageLatch.countDown();
+                        return false;
+                    }
+                }
+
+                @Override
+                public long getDelay() {
+                    return 0;
+                }
+
+            };
+            client.getProperties().put(ClientProperties.RECONNECT_HANDLER, reconnectHandler);
 
             this.session = client.connectToServer(new Endpoint() {
 
@@ -78,6 +107,14 @@ public class WebSocketClientWrapper {
                 public void onError(Session session, Throwable t) {
 
                     t.printStackTrace();
+                }
+
+                @Override
+                public void onClose(Session session, CloseReason closeReason) {
+                    if (errorReceived) {
+                        System.out.println("Error received in close session");
+                    }
+
                 }
             }, cec, webSocketchannelUri);
 
@@ -214,6 +251,9 @@ public class WebSocketClientWrapper {
                 String error = parser.getOtErrorMessageContent(message);
                 eventBus.post(new ShareLatexErrorMessageEvent(error));
             }
+            if (message.contains("0::")) {
+                leaveDocAndCloseConn();
+            }
 
         } catch (IOException | ParseException e) {
             e.printStackTrace();
@@ -260,6 +300,10 @@ public class WebSocketClientWrapper {
 
     private synchronized void setLeftDoc(boolean leftDoc) {
         this.leftDoc = leftDoc;
+    }
+
+    private synchronized void setErrorReceived(boolean errorReceived) {
+        this.errorReceived = errorReceived;
     }
 
 }

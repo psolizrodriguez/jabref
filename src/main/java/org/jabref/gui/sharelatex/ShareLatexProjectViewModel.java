@@ -21,7 +21,6 @@ public class ShareLatexProjectViewModel {
     private final StringProperty lastUpdated;
 
     public ShareLatexProjectViewModel(ShareLatexProject project) {
-
         this.projectId = project.getProjectId();
         this.projectTitle = new SimpleStringProperty(project.getProjectTitle());
         this.owner = new SimpleStringProperty(project.getOwner());

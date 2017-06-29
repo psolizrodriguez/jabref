@@ -1,6 +1,7 @@
 package org.jabref.gui.sharelatex;
 
 import java.io.IOException;
+
 import javax.inject.Inject;
 
 import javafx.fxml.FXML;

@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class ShareLatexParserTest {
@@ -51,9 +52,7 @@ public class ShareLatexParserTest {
         String bibTexString = "6:::7+[null,[\"@book{adams1995hitchhiker,\",\"  title={The Hitchhiker's Guide to the Galaxy},\",\"  author={Adams, D.},\",\"  isbn={9781417642595},\",\"  url={http://books.google.com/books?id=W-xMPgAACAAJ},\",\"  year={1995}\",\"  publisher={San Val}\",\"}\",\"\"],5,[],{}]";
 
         int actual = parser.getVersionFromBibTexJsonString(bibTexString);
-
         assertEquals(5, actual);
-
     }
 
     @Test

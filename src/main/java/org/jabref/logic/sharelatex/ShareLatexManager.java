@@ -28,7 +28,6 @@ public class ShareLatexManager {
     }
 
     public List<ShareLatexProject> getProjects() throws IOException {
-
         connector.getProjects().ifPresent(jsonResponse -> {
             if (jsonResponse.has("projects")) {
                 JsonArray projectArray = jsonResponse.get("projects").getAsJsonArray();
@@ -47,7 +46,6 @@ public class ShareLatexManager {
                     ShareLatexProject project = new ShareLatexProject(id, name, owner, lastUpdated);
                     projects.add(project);
                 }
-
             }
         });
         return projects;
@@ -75,15 +73,12 @@ public class ShareLatexManager {
             StringSaveSession saveSession = databaseWriter.saveDatabase(database, preferences);
             String updatedcontent = saveSession.getStringValue().replace("\r\n", "\n");
 
-
-
             connector.sendNewDatabaseContent(updatedcontent);
         } catch (InterruptedException | SaveException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
-
 
     public void registerListener(Object listener) {
         connector.registerListener(listener);

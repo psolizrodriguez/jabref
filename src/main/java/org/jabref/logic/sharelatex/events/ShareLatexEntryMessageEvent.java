@@ -1,4 +1,4 @@
-package org.jabref.logic.sharelatex;
+package org.jabref.logic.sharelatex.events;
 
 import java.util.ArrayList;
 import java.util.List;

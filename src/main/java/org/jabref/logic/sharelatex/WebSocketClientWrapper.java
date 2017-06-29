@@ -17,6 +17,9 @@ import javax.websocket.Session;
 import org.jabref.JabRefExecutorService;
 import org.jabref.logic.importer.ImportFormatPreferences;
 import org.jabref.logic.importer.ParseException;
+import org.jabref.logic.sharelatex.events.ShareLatexContinueMessageEvent;
+import org.jabref.logic.sharelatex.events.ShareLatexEntryMessageEvent;
+import org.jabref.logic.sharelatex.events.ShareLatexErrorMessageEvent;
 import org.jabref.model.database.BibDatabaseContext;
 import org.jabref.model.entry.BibEntry;
 
@@ -129,7 +132,7 @@ public class WebSocketClientWrapper {
     }
 
     @Subscribe
-    public synchronized void listenToSharelatexEntryMessage(ShareLatexContinueMessage event) {
+    public synchronized void listenToSharelatexEntryMessage(ShareLatexContinueMessageEvent event) {
 
         JabRefExecutorService.INSTANCE.executeInterruptableTask(() -> {
             try {
@@ -154,7 +157,7 @@ public class WebSocketClientWrapper {
 
             if (message.contains("2::")) {
                 setLeftDoc(false);
-                eventBus.post(new ShareLatexContinueMessage());
+                eventBus.post(new ShareLatexContinueMessageEvent());
                 sendHeartBeat();
 
             }
@@ -197,7 +200,7 @@ public class WebSocketClientWrapper {
                 setLeftDoc(false);
 
                 eventBus.post(new ShareLatexEntryMessageEvent(entries, bibtexString));
-                eventBus.post(new ShareLatexContinueMessage());
+                eventBus.post(new ShareLatexContinueMessageEvent());
 
             }
 
@@ -206,6 +209,10 @@ public class WebSocketClientWrapper {
 
                 leaveDocument(docId);
                 setLeftDoc(true);
+            }
+            if (message.contains("otUpdateError")) {
+                String error = parser.getOtErrorMessageContent(message);
+                eventBus.post(new ShareLatexErrorMessageEvent(error));
             }
 
         } catch (IOException | ParseException e) {

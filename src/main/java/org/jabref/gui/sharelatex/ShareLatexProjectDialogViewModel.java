@@ -13,8 +13,8 @@ import javafx.collections.FXCollections;
 
 import org.jabref.gui.AbstractViewModel;
 import org.jabref.gui.StateManager;
-import org.jabref.logic.sharelatex.ShareLatexEntryMessageEvent;
 import org.jabref.logic.sharelatex.ShareLatexManager;
+import org.jabref.logic.sharelatex.events.ShareLatexEntryMessageEvent;
 import org.jabref.model.sharelatex.ShareLatexProject;
 
 import com.google.common.eventbus.Subscribe;

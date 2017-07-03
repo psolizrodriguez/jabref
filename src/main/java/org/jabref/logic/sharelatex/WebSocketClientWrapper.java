@@ -30,6 +30,7 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import org.glassfish.tyrus.client.ClientManager;
 import org.glassfish.tyrus.client.ClientProperties;
+import org.glassfish.tyrus.ext.extension.deflate.PerMessageDeflateExtension;
 
 public class WebSocketClientWrapper {
 
@@ -61,7 +62,8 @@ public class WebSocketClientWrapper {
 
         try {
             this.projectId = projectId;
-            final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create()
+
+            final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create().extensions(Arrays.asList(new PerMessageDeflateExtension()))
                     .preferredSubprotocols(Arrays.asList("mqttt")).build();
             final CountDownLatch messageLatch = new CountDownLatch(1);
 
@@ -96,6 +98,7 @@ public class WebSocketClientWrapper {
 
                 @Override
                 public void onOpen(Session session, EndpointConfig config) {
+                    System.out.println("Session is open" + session.isOpen());
                     session.addMessageHandler(String.class, (Whole<String>) message -> {
 
                         message = parser.fixUTF8Strings(message);
@@ -193,12 +196,18 @@ public class WebSocketClientWrapper {
     private void parseContents(String message) {
         try {
 
+            if (message.contains(":::1")) {
+                System.out.println("Got :::1. Joining project");
+                joinProject(projectId);
+
+            }
             if (message.contains("2::")) {
                 setLeftDoc(false);
                 eventBus.post(new ShareLatexContinueMessageEvent());
                 sendHeartBeat();
 
             }
+
             if (message.endsWith("[null]")) {
                 System.out.println("Received null-> Rejoining doc");
                 joinDoc(docId);

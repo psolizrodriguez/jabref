@@ -146,10 +146,12 @@ dependencies {
     compile group: 'com.microsoft.azure', name: 'applicationinsights-logging-log4j2', version: '1.0.+'
 
     compile "org.glassfish.tyrus.bundles:tyrus-standalone-client:1.13.1"
+    compile "org.glassfish.tyrus.ext:tyrus-extension-deflate:1.13.1"
+
     compile "com.google.code.gson:gson:2.8.0"
     compile "net.sourceforge.htmlunit:htmlunit:2.26"
     compile "com.github.wnameless:json-flattener:0.4.0"
-	compile "org.bitbucket.cowwoc:diff-match-patch:1.1"
+    compile "org.bitbucket.cowwoc:diff-match-patch:1.1"
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:2.8.47'

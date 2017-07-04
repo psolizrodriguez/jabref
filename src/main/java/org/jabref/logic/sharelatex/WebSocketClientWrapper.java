@@ -215,7 +215,7 @@ public class WebSocketClientWrapper {
                 joinDoc(docId);
             }
 
-            if (message.startsWith("[null,{", ShareLatexParser.JSON_START_OFFSET)) {
+            if (message.startsWith("[null,{", message.indexOf("+") + 1)) {
                 System.out.println("We get a list with all files");
                 //We get a list with all files
                 Map<String, String> dbWithID = parser.getBibTexDatabasesNameWithId(message);

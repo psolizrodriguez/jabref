@@ -24,8 +24,6 @@ import org.bitbucket.cowwoc.diffmatchpatch.DiffMatchPatch.Operation;
 
 public class ShareLatexParser {
 
-    private static final int JSON_ERROR_OBJECT_OFFSET = 4;
-    public static final int JSON_START_OFFSET = 6;
     private final JsonParser parser = new JsonParser();
 
     public int getVersionFromBibTexJsonString(String content) {
@@ -117,13 +115,13 @@ public class ShareLatexParser {
     }
 
     private JsonArray parseFirstPartOfMessageAsArray(String documentToParse) {
-        String jsonToRead = documentToParse.substring(JSON_START_OFFSET, documentToParse.length());
+        String jsonToRead = documentToParse.substring(documentToParse.indexOf("+") + 1, documentToParse.length());
         JsonArray arr = parser.parse(jsonToRead).getAsJsonArray();
         return arr;
     }
 
     private JsonObject parseFirstPartOfMessageAsObject(String documentToParse) {
-        String jsonToRead = documentToParse.substring(JSON_ERROR_OBJECT_OFFSET, documentToParse.length());
+        String jsonToRead = documentToParse.substring(documentToParse.indexOf("{"), documentToParse.length());
         return parser.parse(jsonToRead).getAsJsonObject();
     }
 

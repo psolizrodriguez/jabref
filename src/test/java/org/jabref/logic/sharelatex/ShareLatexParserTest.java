@@ -25,7 +25,7 @@ public class ShareLatexParserTest {
     @Test
     public void parseBibTexString() {
 
-        String message = "6:::7+[null,[\"@book{adams1995hitchhiker,       \",\"   title={The Hitchhiker's Guide to the Galaxy},\",\"  author={Adams, D.},\",\"  isbn={9781417642595},\",\"  url={http://books.google.com/books?id=W-xMPgAACAAJ},\",\"  year={199},\",\"  publisher={San Val}\",\"}\",\"\"],74,[],{}]";
+        String message = "6:::78988+[null,[\"@book{adams1995hitchhiker,       \",\"   title={The Hitchhiker's Guide to the Galaxy},\",\"  author={Adams, D.},\",\"  isbn={9781417642595},\",\"  url={http://books.google.com/books?id=W-xMPgAACAAJ},\",\"  year={199},\",\"  publisher={San Val}\",\"}\",\"\"],74,[],{}]";
         String expected = "@book{adams1995hitchhiker,       \n" +
                 "   title={The Hitchhiker's Guide to the Galaxy},\n" +
                 "  author={Adams, D.},\n" +

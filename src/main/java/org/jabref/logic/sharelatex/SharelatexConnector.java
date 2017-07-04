@@ -125,6 +125,7 @@ public class SharelatexConnector {
             URI webSocketchannelUri = new URIBuilder(socketioUrl + "/websocket/" + channel).setScheme(scheme).build();
             System.out.println("WebSocketChannelUrl " + webSocketchannelUri);
             client.setImportFormatPrefs(prefs);
+            client.setServerNameOrigin(server);
             client.createAndConnect(webSocketchannelUri, projectId, database);
 
             setDatabaseName(database);

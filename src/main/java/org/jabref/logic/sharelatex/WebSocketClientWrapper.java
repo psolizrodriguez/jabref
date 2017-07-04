@@ -49,6 +49,7 @@ public class WebSocketClientWrapper {
     private final BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
     private final ShareLatexParser parser = new ShareLatexParser();
+    private String serverOrigin;
 
     public WebSocketClientWrapper() {
         this.eventBus.register(this);
@@ -63,8 +64,9 @@ public class WebSocketClientWrapper {
         try {
             this.projectId = projectId;
 
+            ClientEndpointConfig.Configurator configurator = new MyCustomClientEndpointConfigurator(serverOrigin);
             final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create().extensions(Arrays.asList(new PerMessageDeflateExtension()))
-                    .preferredSubprotocols(Arrays.asList("mqttt")).build();
+                    .configurator(configurator).build();
             final CountDownLatch messageLatch = new CountDownLatch(1);
 
             ClientManager client = ClientManager.createClient();
@@ -281,6 +283,11 @@ public class WebSocketClientWrapper {
         leaveDocument(docId);
         queue.clear();
         session.close();
+
+    }
+
+    public void setServerNameOrigin(String serverOrigin) {
+        this.serverOrigin = serverOrigin;
 
     }
 

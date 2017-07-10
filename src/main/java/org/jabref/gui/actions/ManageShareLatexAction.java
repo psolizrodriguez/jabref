@@ -25,5 +25,4 @@ public class ManageShareLatexAction extends AbstractAction {
         Platform.runLater(() -> new ShareLatexLoginDialogView().show());
 
     }
-
 }

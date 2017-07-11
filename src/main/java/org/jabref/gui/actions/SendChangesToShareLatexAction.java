@@ -13,7 +13,7 @@ public class SendChangesToShareLatexAction extends AbstractAction {
 
     public SendChangesToShareLatexAction() {
         super();
-        putValue(Action.NAME, "Send changes to ShareLatex Server");
+        putValue(Action.NAME, "Send changes to ShareLaTeX Server");
 
     }
 

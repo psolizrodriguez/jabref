@@ -1338,6 +1338,7 @@ public class JabRefFrame extends JFrame implements OutputPrinter {
         tlb.addAction(cleanupEntries);
         tlb.addAction(mergeEntries);
         tlb.addAction(pullChangesFromSharedDatabase);
+        tlb.addAction(manageSharelatex);
         tlb.addAction(openConsole);
 
         tlb.addSeparator();

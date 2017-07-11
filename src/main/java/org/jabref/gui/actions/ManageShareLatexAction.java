@@ -7,13 +7,17 @@ import javax.swing.Action;
 
 import javafx.application.Platform;
 
+import org.jabref.gui.IconTheme;
 import org.jabref.gui.sharelatex.ShareLatexLoginDialogView;
 
 public class ManageShareLatexAction extends AbstractAction {
 
     public ManageShareLatexAction() {
         super();
-        putValue(Action.NAME, "manage sharelatex");
+        putValue(Action.NAME, "Synchronize with ShareLaTeX");
+        putValue(Action.SMALL_ICON, IconTheme.getImage("sharelatex"));
+        putValue(Action.SHORT_DESCRIPTION, "Synchronize with ShareLaTeX");
+
     }
 
     @Override
@@ -21,5 +25,4 @@ public class ManageShareLatexAction extends AbstractAction {
         Platform.runLater(() -> new ShareLatexLoginDialogView().show());
 
     }
-
 }

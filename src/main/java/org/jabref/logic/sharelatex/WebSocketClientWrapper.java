@@ -50,6 +50,7 @@ public class WebSocketClientWrapper {
 
     private final ShareLatexParser parser = new ShareLatexParser();
     private String serverOrigin;
+    private Map<String, String> cookies;
 
     public WebSocketClientWrapper() {
         this.eventBus.register(this);
@@ -64,13 +65,15 @@ public class WebSocketClientWrapper {
         try {
             this.projectId = projectId;
 
-            ClientEndpointConfig.Configurator configurator = new MyCustomClientEndpointConfigurator(serverOrigin);
+            ClientEndpointConfig.Configurator configurator = new MyCustomClientEndpointConfigurator(serverOrigin, cookies);
             final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create().extensions(Arrays.asList(new PerMessageDeflateExtension()))
                     .configurator(configurator).build();
             final CountDownLatch messageLatch = new CountDownLatch(1);
 
             ClientManager client = ClientManager.createClient();
             client.getProperties().put(ClientProperties.REDIRECT_ENABLED, true);
+            client.getProperties().put(ClientProperties.LOG_HTTP_UPGRADE, true);
+
             ClientManager.ReconnectHandler reconnectHandler = new ClientManager.ReconnectHandler() {
 
                 private final AtomicInteger counter = new AtomicInteger(0);
@@ -101,6 +104,7 @@ public class WebSocketClientWrapper {
                 @Override
                 public void onOpen(Session session, EndpointConfig config) {
                     System.out.println("Session is open" + session.isOpen());
+
                     session.addMessageHandler(String.class, (Whole<String>) message -> {
 
                         message = parser.fixUTF8Strings(message);
@@ -199,8 +203,9 @@ public class WebSocketClientWrapper {
         try {
 
             if (message.contains(":::1")) {
+
+                Thread.currentThread().sleep(300);
                 System.out.println("Got :::1. Joining project");
-                joinProject(projectId);
 
             }
             if (message.contains("2::")) {
@@ -288,6 +293,11 @@ public class WebSocketClientWrapper {
 
     public void setServerNameOrigin(String serverOrigin) {
         this.serverOrigin = serverOrigin;
+
+    }
+
+    public void setCookies(Map<String, String> cookies) {
+        this.cookies = cookies;
 
     }
 

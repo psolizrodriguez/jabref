@@ -16,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
@@ -79,6 +80,7 @@ import org.jabref.model.FieldChange;
 import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.EntryType;
+import org.jabref.model.util.JazzySpellChecker;
 import org.jabref.preferences.JabRefPreferences;
 
 import org.apache.commons.logging.Log;
@@ -180,16 +182,16 @@ public class EntryEditor extends JPanel implements EntryContainer {
                 Optional<KeyBinding> keyBinding = Globals.getKeyPrefs().mapToKeyBinding(e);
                 if (keyBinding.isPresent()) {
                     switch (keyBinding.get()) {
-                    case CUT:
-                    case COPY:
-                    case PASTE:
-                    case CLOSE_ENTRY_EDITOR:
-                    case DELETE_ENTRY:
-                    case SELECT_ALL:
-                        e.consume();
-                        break;
-                    default:
-                        //do nothing
+                        case CUT:
+                        case COPY:
+                        case PASTE:
+                        case CLOSE_ENTRY_EDITOR:
+                        case DELETE_ENTRY:
+                        case SELECT_ALL:
+                            e.consume();
+                            break;
+                        default:
+                            //do nothing
                     }
                 }
             }
@@ -219,26 +221,26 @@ public class EntryEditor extends JPanel implements EntryContainer {
             Optional<KeyBinding> keyBinding = Globals.getKeyPrefs().mapToKeyBinding(event);
             if (keyBinding.isPresent()) {
                 switch (keyBinding.get()) {
-                case ENTRY_EDITOR_NEXT_PANEL:
-                case ENTRY_EDITOR_NEXT_PANEL_2:
-                    tabbed.getSelectionModel().selectNext();
-                    event.consume();
-                    break;
-                case ENTRY_EDITOR_PREVIOUS_PANEL:
-                case ENTRY_EDITOR_PREVIOUS_PANEL_2:
-                    tabbed.getSelectionModel().selectPrevious();
-                    event.consume();
-                    break;
-                case HELP:
-                    helpAction.actionPerformed(null);
-                    event.consume();
-                    break;
-                case CLOSE_ENTRY_EDITOR:
-                    closeAction.actionPerformed(null);
-                    event.consume();
-                    break;
-                default:
-                    // Pass other keys to children
+                    case ENTRY_EDITOR_NEXT_PANEL:
+                    case ENTRY_EDITOR_NEXT_PANEL_2:
+                        tabbed.getSelectionModel().selectNext();
+                        event.consume();
+                        break;
+                    case ENTRY_EDITOR_PREVIOUS_PANEL:
+                    case ENTRY_EDITOR_PREVIOUS_PANEL_2:
+                        tabbed.getSelectionModel().selectPrevious();
+                        event.consume();
+                        break;
+                    case HELP:
+                        helpAction.actionPerformed(null);
+                        event.consume();
+                        break;
+                    case CLOSE_ENTRY_EDITOR:
+                        closeAction.actionPerformed(null);
+                        event.consume();
+                        break;
+                    default:
+                        // Pass other keys to children
                 }
             }
         });
@@ -354,6 +356,12 @@ public class EntryEditor extends JPanel implements EntryContainer {
         TypeButton typeButton = new TypeButton();
 
         toolBar.add(typeButton);
+
+        // Adding Spell Checker
+        SpellCheckerAction spellChecker = new SpellCheckerAction();
+
+        toolBar.add(spellChecker);
+        // Adding Spell Checker
         toolBar.add(generateKeyAction);
         toolBar.add(autoLinkAction);
 
@@ -806,6 +814,28 @@ public class EntryEditor extends JPanel implements EntryContainer {
         @Override
         public void actionPerformed(ActionEvent e) {
             panel.selectPreviousEntry();
+        }
+    }
+
+    private class SpellCheckerAction extends AbstractAction {
+
+        JazzySpellChecker jazzySpellChecker = null;
+
+        private SpellCheckerAction() {
+            super(Localization.lang("Generate BibTeX key"), IconTheme.JabRefIcon.MAKE_KEY.getIcon());
+
+            putValue(Action.SHORT_DESCRIPTION, Localization.lang("Generate BibTeX key"));
+
+            jazzySpellChecker = new JazzySpellChecker();
+
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            System.out.println(panel.getCurrentEditor().getEntry().getFieldMap());
+            // 1. Perform a Spell Check on the fields that contains any kind of text
+            Map<String, Map<Integer, List<String>>> allErrors = jazzySpellChecker.performSpellCheck(panel.getCurrentEditor().getEntry().getFieldMap());
+            System.out.println(allErrors);
         }
     }
 

@@ -32,10 +32,11 @@ public class EntryEditorSpellCheckerTest {
         currentFields = new LinkedHashMap<>();
         currentFields.put("author", "teh");
     }
-
+    
     @Test
-    public void mapTest() {
-
+    public void mapTest()
+    {
+        
     }
 
     @Test

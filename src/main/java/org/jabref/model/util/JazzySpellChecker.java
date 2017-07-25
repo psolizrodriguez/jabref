@@ -3,7 +3,7 @@ package org.jabref.model.util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -27,24 +27,19 @@ public class JazzySpellChecker {
         }
     }
 
-    public Map<String, Map<String, List<Word>>> performSpellCheck(Map<String, String> currentFields) {
-        Map<String, Map<String, List<Word>>> allErrors = new LinkedHashMap<>();
+    public List<SpellCheckerRecord> performSpellCheck(Map<String, String> currentFields) {
+        List<SpellCheckerRecord> allErrors = new ArrayList<>();
         if (!currentFields.isEmpty()) {
             // 2. Iterate over current fields
             for (Map.Entry<String, String> currentField : currentFields.entrySet()) {
-                Map<String, List<Word>> mapResult = new LinkedHashMap<>();
                 String[] arrayOfWords = currentField.getValue().split(" ");
-
                 if (arrayOfWords.length > 0) {
                     for (int i = 0; i < arrayOfWords.length; i++) {
                         List<Word> possibleWords = spellChecker.getSuggestions(arrayOfWords[i], 1);
                         if ((possibleWords != null) && (possibleWords.size() > 0)) {
-                            mapResult.put(arrayOfWords[i], possibleWords);
+                            allErrors.add(new SpellCheckerRecord(currentField.getKey(), arrayOfWords[i], i, possibleWords));
                         }
                     }
-                }
-                if (mapResult.size() > 0) {
-                    allErrors.put(currentField.getKey(), mapResult);
                 }
             }
 

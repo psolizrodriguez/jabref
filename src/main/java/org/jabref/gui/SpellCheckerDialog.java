@@ -5,10 +5,9 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -19,9 +18,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
+import org.jabref.gui.auximport.FromAuxDialog;
+import org.jabref.model.entry.BibEntry;
+import org.jabref.model.util.SpellCheckerRecord;
+
 import com.swabunga.spell.engine.Word;
 
-public class SpellCheckerDialog extends JDialog {
+public class SpellCheckerDialog extends JabRefDialog {
 
     /**
      *
@@ -34,6 +37,7 @@ public class SpellCheckerDialog extends JDialog {
     List<SpellCheckerRecord> wordsToCheck;
     int currentWord;
     BasePanel panel;
+    BibEntry entry;
 
     /**
      * Populate the Dialog
@@ -57,11 +61,13 @@ public class SpellCheckerDialog extends JDialog {
     /**
      * Create the dialog.
      */
-    public SpellCheckerDialog(JabRefFrame frame, BasePanel panel, Map<String, Map<String, List<Word>>> mapFields) {
-        super(frame);
+    public SpellCheckerDialog(JabRefFrame frame, BasePanel panel, BibEntry entry, List<SpellCheckerRecord> wordsToCheck) {
+        super(frame, "Spell Checker", true, FromAuxDialog.class);
+        this.wordsToCheck = wordsToCheck;
+        this.entry = entry;
         this.panel = panel;
-        setLocationRelativeTo(panel);
-        setModal(true);
+
+        //setModal(true);
         setTitle("Entry Fields Spell Checker");
         setBounds(100, 100, 365, 262);
         getContentPane().setLayout(new BorderLayout());
@@ -117,7 +123,7 @@ public class SpellCheckerDialog extends JDialog {
 
                     @Override
                     public void actionPerformed(ActionEvent arg0) {
-                        loadNextWordInList();
+                        replaceWord();
                     }
                 });
                 replaceButton.setActionCommand("Replace");
@@ -137,83 +143,41 @@ public class SpellCheckerDialog extends JDialog {
                 buttonPane.add(cancelButton);
             }
         }
-        loadMapIntoSpellCheckerRecordList(mapFields);
+        setLocationRelativeTo(frame);
         loadNextWordInList();
 
     }
 
-    public void loadMapIntoSpellCheckerRecordList(Map<String, Map<String, List<Word>>> mapFields) {
-        wordsToCheck = new ArrayList<>();
-        for (Entry<String, Map<String, List<Word>>> entry : mapFields.entrySet()) {
-            String currentField = entry.getKey();
-            Map<String, List<Word>> currentWordMap = entry.getValue();
-            for (Entry<String, List<Word>> subEntry : currentWordMap.entrySet()) {
-                wordsToCheck.add(new SpellCheckerRecord(currentField, subEntry.getKey(), subEntry.getValue()));
-            }
-        }
-    }
-
     public void loadNextWordInList() {
         if (currentWord < wordsToCheck.size()) {
-            this.populateDialog(this.wordsToCheck.get(currentWord));
-            currentWord++;
+            this.populateDialog(wordsToCheck.get(currentWord));
         } else {
             closeDialog();
         }
     }
 
     public void ignoreWord() {
+        currentWord++;
         loadNextWordInList();
+
     }
 
     public void replaceWord() {
-
-        panel.getCurrentEditor().getEntry().setField(this.wordsToCheck.get(currentWord).getFieldName(), "*");
+        correctWordInPosition();
+        currentWord++;
         loadNextWordInList();
+    }
+
+    public void correctWordInPosition() {
+        String[] correctedValueArray = entry.getField(this.wordsToCheck.get(currentWord).getFieldName()).get().split(" ");
+        correctedValueArray[this.wordsToCheck.get(currentWord).getPositionInArray()] = list.getSelectedValue();
+        String correctedValue = Arrays.stream(correctedValueArray).collect(Collectors.joining(" "));
+        entry.setField(this.wordsToCheck.get(currentWord).getFieldName(), correctedValue);
+
     }
 
     public void closeDialog() {
         this.dispose();
     }
 
-    public class SpellCheckerRecord {
-
-        String fieldName;
-        String word;
-        List<Word> suggestedWords;
-
-        public SpellCheckerRecord(String fieldName,
-                String word,
-                List<Word> suggestedWords) {
-            this.fieldName = fieldName;
-            this.word = word;
-            this.suggestedWords = suggestedWords;
-
-        }
-
-        public String getFieldName() {
-            return fieldName;
-        }
-
-        public void setFieldName(String fieldName) {
-            this.fieldName = fieldName;
-        }
-
-        public String getWord() {
-            return word;
-        }
-
-        public void setWord(String word) {
-            this.word = word;
-        }
-
-        public List<Word> getSuggestedWords() {
-            return suggestedWords;
-        }
-
-        public void setSuggestedWords(List<Word> suggestedWords) {
-            this.suggestedWords = suggestedWords;
-        }
-
-    }
 }

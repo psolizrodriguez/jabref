@@ -10,6 +10,7 @@ import java.util.Map;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.model.util.JazzySpellChecker;
 
+import org.apache.logging.log4j.core.layout.MarkerPatternSelector;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,6 +31,11 @@ public class EntryEditorSpellCheckerTest {
         jazzySpellChecker = new JazzySpellChecker();
         currentFields = new LinkedHashMap<>();
         currentFields.put("author", "teh");
+    }
+
+    @Test
+    public void mapTest() {
+
     }
 
     @Test

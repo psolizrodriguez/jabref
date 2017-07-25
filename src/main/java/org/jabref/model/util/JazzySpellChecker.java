@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.swabunga.spell.engine.SpellDictionaryHashMap;
+import com.swabunga.spell.engine.Word;
 import com.swabunga.spell.event.SpellChecker;
 
 public class JazzySpellChecker {
@@ -26,24 +27,24 @@ public class JazzySpellChecker {
         }
     }
 
-    public Map<String, Map<Integer, List<String>>> performSpellCheck(Map<String, String> currentFields) {
-        Map<String, Map<Integer, List<String>>> allErrors = new LinkedHashMap<>();
+    public Map<String, Map<String, List<Word>>> performSpellCheck(Map<String, String> currentFields) {
+        Map<String, Map<String, List<Word>>> allErrors = new LinkedHashMap<>();
         if (!currentFields.isEmpty()) {
             // 2. Iterate over current fields
             for (Map.Entry<String, String> currentField : currentFields.entrySet()) {
-                Map<Integer, List<String>> mapResult = new LinkedHashMap<>();
+                Map<String, List<Word>> mapResult = new LinkedHashMap<>();
                 String[] arrayOfWords = currentField.getValue().split(" ");
 
                 if (arrayOfWords.length > 0) {
                     for (int i = 0; i < arrayOfWords.length; i++) {
-                        List<String> possibleWords = spellChecker.getSuggestions(arrayOfWords[i], 1);
+                        List<Word> possibleWords = spellChecker.getSuggestions(arrayOfWords[i], 1);
                         if ((possibleWords != null) && (possibleWords.size() > 0)) {
-                            mapResult.put(i, possibleWords);
+                            mapResult.put(arrayOfWords[i], possibleWords);
                         }
                     }
                 }
                 if (mapResult.size() > 0) {
-                    allErrors.put("" + currentField.getKey(), mapResult);
+                    allErrors.put(currentField.getKey(), mapResult);
                 }
             }
 

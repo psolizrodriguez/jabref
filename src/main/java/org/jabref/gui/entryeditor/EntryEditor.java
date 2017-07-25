@@ -49,6 +49,7 @@ import org.jabref.gui.GUIGlobals;
 import org.jabref.gui.IconTheme;
 import org.jabref.gui.JabRefFrame;
 import org.jabref.gui.OSXCompatibleToolbar;
+import org.jabref.gui.SpellCheckerDialog;
 import org.jabref.gui.actions.Actions;
 import org.jabref.gui.contentselector.FieldContentSelector;
 import org.jabref.gui.externalfiles.WriteXMPEntryEditorAction;
@@ -83,6 +84,7 @@ import org.jabref.model.entry.EntryType;
 import org.jabref.model.util.JazzySpellChecker;
 import org.jabref.preferences.JabRefPreferences;
 
+import com.swabunga.spell.engine.Word;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.fxmisc.easybind.EasyBind;
@@ -834,8 +836,13 @@ public class EntryEditor extends JPanel implements EntryContainer {
         public void actionPerformed(ActionEvent e) {
             System.out.println(panel.getCurrentEditor().getEntry().getFieldMap());
             // 1. Perform a Spell Check on the fields that contains any kind of text
-            Map<String, Map<Integer, List<String>>> allErrors = jazzySpellChecker.performSpellCheck(panel.getCurrentEditor().getEntry().getFieldMap());
-            System.out.println(allErrors);
+            Map<String, Map<String, List<Word>>> allErrors = jazzySpellChecker.performSpellCheck(panel.getCurrentEditor().getEntry().getFieldMap());
+            SpellCheckerDialog dialog;
+            dialog = new SpellCheckerDialog(frame, panel, allErrors);
+
+            dialog.setVisible(true);
+
+            //System.out.println(allErrors);
         }
     }
 

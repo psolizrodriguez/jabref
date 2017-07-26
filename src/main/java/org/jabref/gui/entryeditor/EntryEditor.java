@@ -821,12 +821,11 @@ public class EntryEditor extends JPanel implements EntryContainer {
     private class SpellCheckerAction extends AbstractAction {
 
         JazzySpellChecker jazzySpellChecker = null;
+        SpellCheckerDialog dialog;
 
         private SpellCheckerAction() {
-            super(Localization.lang("Generate BibTeX key"), IconTheme.JabRefIcon.MAKE_KEY.getIcon());
-
-            putValue(Action.SHORT_DESCRIPTION, Localization.lang("Generate BibTeX key"));
-
+            super(Localization.lang("Spell_Checker"), IconTheme.JabRefIcon.MAKE_KEY.getIcon());
+            putValue(Action.SHORT_DESCRIPTION, Localization.lang("Spell_Checker"));
             jazzySpellChecker = new JazzySpellChecker();
 
         }
@@ -836,7 +835,6 @@ public class EntryEditor extends JPanel implements EntryContainer {
             System.out.println(panel.getCurrentEditor().getEntry().getFieldMap());
             // 1. Perform a Spell Check on the fields that contains any kind of text
             List<SpellCheckerRecord> allErrors = jazzySpellChecker.performSpellCheck(panel.getCurrentEditor().getEntry().getFieldMap());
-            SpellCheckerDialog dialog;
             dialog = new SpellCheckerDialog(frame, panel, entry, allErrors);
             dialog.setVisible(true);
         }

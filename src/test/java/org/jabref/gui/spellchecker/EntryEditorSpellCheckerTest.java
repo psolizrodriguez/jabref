@@ -21,10 +21,11 @@ public class EntryEditorSpellCheckerTest {
     Map<String, String> currentFields;
     SpellDictionaryHashMap dictionary = null;
     SpellChecker spellChecker = null;
+    BufferedReader reader;
 
     @Before
     public void setUp() throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/english.0")));
+        reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/english.0")));
         dictionary = new SpellDictionaryHashMap(reader);
         spellChecker = new SpellChecker(dictionary);
         jazzySpellChecker = new JazzySpellChecker();
@@ -45,5 +46,12 @@ public class EntryEditorSpellCheckerTest {
         //Verifying content of suggestions
         Assert.assertArrayEquals(expectedValues, suggestedValues);
     }
+
+    @Test
+    public void dictionaryFileTest() throws Exception {
+        Assert.assertNotNull(reader);
+        Assert.assertTrue(reader.readLine(), true);
+    }
+
 
 }

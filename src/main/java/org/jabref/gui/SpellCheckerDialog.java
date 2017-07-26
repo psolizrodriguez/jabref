@@ -12,19 +12,19 @@ import java.util.stream.Collectors;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-import org.jabref.gui.auximport.FromAuxDialog;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.util.SpellCheckerRecord;
 
 import com.swabunga.spell.engine.Word;
 
-public class SpellCheckerDialog extends JabRefDialog {
+public class SpellCheckerDialog extends JDialog {
 
     /**
      *
@@ -38,6 +38,18 @@ public class SpellCheckerDialog extends JabRefDialog {
     int currentWord;
     BasePanel panel;
     BibEntry entry;
+
+    public JList<String> getList() {
+        return list;
+    }
+
+    public void setList(JList<String> list) {
+        this.list = list;
+    }
+
+    public int getCurrentWord() {
+        return currentWord;
+    }
 
     /**
      * Populate the Dialog
@@ -61,8 +73,8 @@ public class SpellCheckerDialog extends JabRefDialog {
     /**
      * Create the dialog.
      */
-    public SpellCheckerDialog(JabRefFrame frame, BasePanel panel, BibEntry entry, List<SpellCheckerRecord> wordsToCheck) {
-        super(frame, "Spell Checker", true, FromAuxDialog.class);
+    public SpellCheckerDialog(JFrame frame, BasePanel panel, BibEntry entry, List<SpellCheckerRecord> wordsToCheck) {
+        super(frame, "Spell Checker", true);
         this.wordsToCheck = wordsToCheck;
         this.entry = entry;
         this.panel = panel;
@@ -159,7 +171,6 @@ public class SpellCheckerDialog extends JabRefDialog {
     public void ignoreWord() {
         currentWord++;
         loadNextWordInList();
-
     }
 
     public void replaceWord() {

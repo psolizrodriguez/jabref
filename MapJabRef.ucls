@@ -1,967 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.14" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="org.jabref.JabRefMain" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/JabRefMain.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="611" y="145"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="org.jabref.JabRefGUI" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/JabRefGUI.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="214" y="311"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="org.jabref.gui.JabRefFrame.ChangeTabAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-1473" y="2465"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="org.jabref.gui.JabRefFrame.EditModeAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-1210" y="2465"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="org.jabref.gui.JabRefFrame.CloseDatabaseAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-947" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="org.jabref.gui.JabRefFrame.MyGlassPane" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-726" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="org.jabref.gui.JabRefFrame.DefaultTableFontSizeAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-506" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="org.jabref.gui.JabRefFrame.CloseAllDatabasesAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-243" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="9" language="java" name="org.jabref.gui.JabRefFrame.CloseOtherDatabasesAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="21" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="org.jabref.gui.JabRefFrame.UndoRedoEventManager" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="291" y="2474"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="org.jabref.gui.JabRefFrame.CloseAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="561" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="12" language="java" name="org.jabref.gui.JabRefFrame.ShowPrefsAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="824" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" name="org.jabref.gui.JabRefFrame.EditAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1124" y="2465"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="14" language="java" name="org.jabref.gui.JabRefFrame.GenFieldsCustomizationAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1434" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="org.jabref.gui.JabRefFrame.ProtectedTermsAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1706" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="16" language="java" name="org.jabref.gui.JabRefFrame.DatabasePropertiesAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1996" y="2465"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="17" language="java" name="org.jabref.gui.JabRefFrame.BibtexKeyPatternAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2329" y="2465"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="18" language="java" name="org.jabref.gui.JabRefFrame.CustomizeEntryTypeAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2634" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="19" language="java" name="org.jabref.gui.JabRefFrame" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1290" y="315"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="20" language="java" name="org.jabref.gui.JabRefFrame.IncreaseTableFontSizeAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2901" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="21" language="java" name="org.jabref.gui.JabRefFrame.GeneralAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3216" y="2519"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="22" language="java" name="org.jabref.gui.JabRefFrame.CustomizeImportsAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3527" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="23" language="java" name="org.jabref.gui.JabRefFrame.DecreaseTableFontSizeAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="3798" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="24" language="java" name="org.jabref.gui.JabRefFrame.CustomizeExportsAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="4068" y="2456"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="25" language="java" name="org.jabref.gui.JabRefFrame.ToolBar" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1669" y="132"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="26" language="java" name="org.jabref.gui.actions.NewEntryAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/actions/NewEntryAction.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2234" y="194"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="27" language="java" name="org.jabref.model.entry.BibtexEntryTypes" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/model/entry/BibtexEntryTypes.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="174" y="-769"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="28" language="java" name="org.jabref.model.entry.BibtexEntryType" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/model/entry/BibtexEntryType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="744" y="-1431"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <interface id="29" language="java" name="org.jabref.model.entry.EntryType" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/model/entry/EntryType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="295" y="-1430"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <class id="30" language="java" name="org.jabref.gui.EntryTypeDialog" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/EntryTypeDialog.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="759" y="-1025"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="31" language="java" name="org.jabref.gui.EntryTypeDialog.CancelAction" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/EntryTypeDialog.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="170" y="-505"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="32" language="java" name="org.jabref.gui.EntryTypeDialog.TypeButton" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/EntryTypeDialog.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="417" y="-496"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="33" language="java" name="org.jabref.gui.EntryTypeDialog.FetcherWorker" project="jabref" 
-    file="/jabref/src/main/java/org/jabref/gui/EntryTypeDialog.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="712" y="-500"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="34" language="java" name="org.jabref.gui.entryeditor.EntryEditor.AutoLinkAction" project="jabref" 
+  <class id="1" language="java" name="org.jabref.gui.entryeditor.EntryEditor.AutoLinkAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="4" y="-1931"/>    
+    <position height="-1" width="-1" x="660" y="203"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="35" language="java" name="org.jabref.gui.entryeditor.EntryEditor.StoreFieldAction" project="jabref" 
+  <class id="2" language="java" name="org.jabref.gui.entryeditor.EntryEditor.SpellCheckerAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="267" y="-1931"/>    
+    <position height="-1" width="-1" x="433" y="245"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="36" language="java" name="org.jabref.gui.entryeditor.EntryEditor" project="jabref" 
+  <class id="3" language="java" name="org.jabref.gui.entryeditor.EntryEditor" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1115" y="-2365"/>    
+    <position height="-1" width="-1" x="894" y="354"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="org.jabref.gui.entryeditor.EntryEditor.UndoAction" project="jabref" 
+  <class id="4" language="java" name="org.jabref.gui.entryeditor.EntryEditor.UndoAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="530" y="-1931"/>    
+    <position height="-1" width="-1" x="369" y="372"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="org.jabref.gui.entryeditor.EntryEditor.GenerateKeyAction" project="jabref" 
+  <class id="5" language="java" name="org.jabref.gui.entryeditor.EntryEditor.GenerateKeyAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="793" y="-1931"/>    
+    <position height="-1" width="-1" x="433" y="483"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="39" language="java" name="org.jabref.gui.entryeditor.EntryEditor.DeleteAction" project="jabref" 
+  <class id="6" language="java" name="org.jabref.gui.entryeditor.EntryEditor.CloseAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1056" y="-1931"/>    
+    <position height="-1" width="-1" x="579" y="563"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="40" language="java" name="org.jabref.gui.entryeditor.EntryEditor.RedoAction" project="jabref" 
+  <class id="7" language="java" name="org.jabref.gui.entryeditor.EntryEditor.TypeLabel" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1319" y="-1931"/>    
+    <position height="-1" width="-1" x="779" y="580"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="41" language="java" name="org.jabref.gui.entryeditor.EntryEditor.CloseAction" project="jabref" 
+  <class id="8" language="java" name="org.jabref.gui.entryeditor.EntryEditor.StoreFieldAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1582" y="-1931"/>    
+    <position height="-1" width="-1" x="1000" y="581"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="42" language="java" name="org.jabref.gui.entryeditor.EntryEditor.TypeButton" project="jabref" 
+  <class id="9" language="java" name="org.jabref.gui.entryeditor.EntryEditor.DeleteAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1805" y="-1940"/>    
+    <position height="-1" width="-1" x="1179" y="558"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="43" language="java" name="org.jabref.gui.entryeditor.EntryEditor.TypeLabel" project="jabref" 
+  <class id="10" language="java" name="org.jabref.gui.entryeditor.EntryEditor.RedoAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2019" y="-1931"/>    
+    <position height="-1" width="-1" x="1320" y="468"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="44" language="java" name="org.jabref.gui.entryeditor.EntryEditor.NextEntryAction" project="jabref" 
+  <class id="11" language="java" name="org.jabref.gui.entryeditor.EntryEditor.TypeButton" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2273" y="-1931"/>    
+    <position height="-1" width="-1" x="1294" y="255"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <class id="45" language="java" name="org.jabref.gui.entryeditor.EntryEditor.PrevEntryAction" project="jabref" 
+  <class id="12" language="java" name="org.jabref.gui.entryeditor.EntryEditor.NextEntryAction" project="jabref" 
     file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="2536" y="-1931"/>    
+    <position height="-1" width="-1" x="1104" y="201"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
     </display>  
   </class>  
-  <association id="46">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="47" name="closeDatabaseAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="48" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="49">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="50" name="INPROCEEDINGS">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="51" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="52">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="53" name="ALL">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="54" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="55">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="41"/>  
+  <class id="13" language="java" name="org.jabref.gui.entryeditor.EntryEditor.PrevEntryAction" project="jabref" 
+    file="/jabref/src/main/java/org/jabref/gui/entryeditor/EntryEditor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1415" y="370"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="org.jabref.gui.JabRefFrame" project="jabref" 
+    file="/jabref/src/main/java/org/jabref/gui/JabRefFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="891" y="91"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false" static="true"/>      
+      <operations public="false" package="false" protected="false" private="false" static="true"/>    
+    </display>  
+  </class>  
+  <nesting id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
   </nesting>  
-  <nesting id="56">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="35"/>  
+  <nesting id="16">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
   </nesting>  
-  <nesting id="57">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="8"/>  
+  <nesting id="17">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="2"/>  
   </nesting>  
-  <association id="58">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="59" name="PHDTHESIS">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="60" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="61">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="39"/>  
-  </nesting>  
-  <association id="62">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="63" name="BOOK">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="64" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="65">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="66" name="PROCEEDINGS">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="67" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="68">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="69" name="MANUAL">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="70" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="71">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="72" name="type">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="73" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="74">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="75" name="generateKeyAction"/>      
-      <multiplicity id="76" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="38" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="77">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="40"/>  
-  </nesting>  
-  <nesting id="78">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="45"/>  
-  </nesting>  
-  <nesting id="79">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="18"/>  
-  </nesting>  
-  <association id="80">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="81" name="INCOLLECTION">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="82" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="83">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
-  <association id="84">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="85" name="MISC">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="86" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="87">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="4"/>  
-  </nesting>  
-  <association id="88">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="89" name="frame"/>      
-      <multiplicity id="90" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="91">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="92" name="closeAction"/>      
-      <multiplicity id="93" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="41" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="94">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="29"/>  
-  </realization>  
-  <nesting id="95">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="31"/>  
-  </nesting>  
-  <nesting id="96">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="42"/>  
-  </nesting>  
-  <nesting id="97">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="9"/>  
-  </nesting>  
-  <nesting id="98">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="15"/>  
-  </nesting>  
-  <nesting id="99">    
-    <end type="SOURCE" refId="19"/>    
+  <nesting id="18">    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="7"/>  
   </nesting>  
-  <association id="100">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="101" name="BOOKLET">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="102" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="103">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="34"/>  
-  </nesting>  
-  <association id="104">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="105" name="closeOtherDatabasesAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="106" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="107">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="44"/>  
-  </nesting>  
-  <association id="108">    
-    <end type="SOURCE" refId="26" navigable="false">      
-      <attribute id="109" name="jabRefFrame">        
-        <position height="0" width="0" x="127" y="-42"/>      
-      </attribute>      
-      <multiplicity id="110" minimum="0" maximum="1">        
-        <position height="0" width="0" x="127" y="-42"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="111">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="112" name="UNPUBLISHED">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="113" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="114">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="115" name="frame">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="116" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="117">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="118" name="newSpecificEntryAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="119" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="120">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="14"/>  
-  </nesting>  
-  <association id="121">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="122" name="undoAction"/>      
-      <multiplicity id="123" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="37" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="124">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="13"/>  
-  </nesting>  
-  <nesting id="125">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="32"/>  
-  </nesting>  
-  <nesting id="126">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="43"/>  
-  </nesting>  
-  <association id="127">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="128" name="editModeAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="129" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="19">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="20" name="undoAction"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="130">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="131" name="TECHREPORT">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="132" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="22">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="23" name="generateKeyAction"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
+    <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="133">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="134" name="cancelAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="135" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="31" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="136">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="24"/>  
+  <nesting id="25">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
   </nesting>  
-  <nesting id="137">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="20"/>  
-  </nesting>  
-  <nesting id="138">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </nesting>  
-  <association id="139">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="140" name="mainFrame">        
-        <position height="0" width="0" x="127" y="-42"/>      
-      </attribute>      
-      <multiplicity id="141" minimum="0" maximum="1">        
-        <position height="0" width="0" x="127" y="-42"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="142">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="11"/>  
-  </nesting>  
-  <nesting id="143">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="21"/>  
-  </nesting>  
-  <association id="144">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="145" name="INBOOK">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="146" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="147">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="148" name="redoAction"/>      
-      <multiplicity id="149" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="40" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="150">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="10"/>  
-  </nesting>  
-  <association id="151">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="152" name="CONFERENCE">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="153" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="154">    
-    <end type="SOURCE" refId="32" navigable="false">      
-      <attribute id="155" name="type">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="156" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="157">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="158" name="MASTERSTHESIS">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="159" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="160">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="22"/>  
-  </nesting>  
-  <nesting id="161">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="12"/>  
-  </nesting>  
-  <association id="162">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="163" name="findUnlinkedFiles">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="164" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="165">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="38"/>  
-  </nesting>  
-  <association id="166">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="167" name="newEntryAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="168" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="169">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="25"/>  
-  </nesting>  
-  <association id="170">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="171" name="ARTICLE">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="172" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="173">    
-    <end type="SOURCE" refId="36"/>    
-    <end type="TARGET" refId="37"/>  
-  </nesting>  
-  <association id="174">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="175" name="closeAllDatabasesAction">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="176" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="177">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="33"/>  
-  </nesting>  
-  <association id="178">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="179" name="deleteAction"/>      
-      <multiplicity id="180" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="39" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="181">    
-    <end type="SOURCE" refId="19"/>    
+  <nesting id="26">    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="6"/>  
   </nesting>  
-  <nesting id="182">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="17"/>  
+  <nesting id="27">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
   </nesting>  
-  <nesting id="183">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="23"/>  
+  <nesting id="28">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="10"/>  
   </nesting>  
-  <association id="184">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="185" name="autoLinkAction"/>      
-      <multiplicity id="186" minimum="0" maximum="1"/>    
+  <association id="29">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="30" name="frame"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="34" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="187">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="188" name="tlb">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="189" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="32">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="33" name="deleteAction"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="9" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="190">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="5"/>  
+  <nesting id="35">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="4"/>  
+  </nesting>  
+  <nesting id="36">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="11"/>  
+  </nesting>  
+  <association id="37">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="38" name="closeAction"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="40">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="13"/>  
+  </nesting>  
+  <association id="41">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="42" name="redoAction"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="45" name="autoLinkAction"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="47">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="12"/>  
   </nesting>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
-    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
-    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+    <attributes public="false" package="false" protected="false" private="false" static="true"/>    
+    <operations public="false" package="false" protected="false" private="false" static="true"/>  
   </classifier-display>  
   <association-display labels="true" multiplicity="true"/>
 </class-diagram>

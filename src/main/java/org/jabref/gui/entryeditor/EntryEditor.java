@@ -824,8 +824,8 @@ public class EntryEditor extends JPanel implements EntryContainer {
         SpellCheckerDialog dialog;
 
         private SpellCheckerAction() {
-            super(Localization.lang("Spell_Checker"), IconTheme.JabRefIcon.MAKE_KEY.getIcon());
-            putValue(Action.SHORT_DESCRIPTION, Localization.lang("Spell_Checker"));
+            super(Localization.lang("Spell_Check"), IconTheme.JabRefIcon.SPELLCHECK.getIcon());
+            putValue(Action.SHORT_DESCRIPTION, Localization.lang("Spell_Check"));
             jazzySpellChecker = new JazzySpellChecker();
 
         }

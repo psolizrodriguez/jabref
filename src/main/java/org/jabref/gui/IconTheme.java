@@ -206,6 +206,7 @@ public class IconTheme {
         RIGHT(MaterialDesignIcon.ARROW_RIGHT_BOLD),
         SOURCE(MaterialDesignIcon.CODE_BRACES),
         MAKE_KEY(MaterialDesignIcon.KEY_VARIANT),
+        SPELLCHECK(MaterialDesignIcon.SPELLCHECK),
         CLEANUP_ENTRIES(MaterialDesignIcon.BROOM),
         PRIORITY(MaterialDesignIcon.FLAG),
         PRIORITY_HIGH(Color.RED, MaterialDesignIcon.FLAG),

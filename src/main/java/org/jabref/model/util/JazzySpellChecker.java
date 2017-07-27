@@ -36,7 +36,7 @@ public class JazzySpellChecker {
                 if (arrayOfWords.length > 0) {
                     for (int i = 0; i < arrayOfWords.length; i++) {
                         List<Word> possibleWords = spellChecker.getSuggestions(arrayOfWords[i], 1);
-                        if ((possibleWords != null) && (possibleWords.size() > 0)) {
+                        if ((possibleWords != null) && (possibleWords.size() > 0) && !wordIsInSuggestion(possibleWords, arrayOfWords[i])) {
                             allErrors.add(new SpellCheckerRecord(currentField.getKey(), arrayOfWords[i], i, possibleWords));
                         }
                     }
@@ -46,5 +46,16 @@ public class JazzySpellChecker {
         }
         System.out.println("Errors found : " + allErrors.toString());
         return allErrors;
+    }
+
+    public boolean wordIsInSuggestion(List<Word> possibleWords, String string) {
+        if ((possibleWords != null) && (possibleWords.size() > 0)) {
+            for (Word word : possibleWords) {
+                if (word.getWord().equalsIgnoreCase(string)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

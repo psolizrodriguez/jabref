@@ -28,6 +28,7 @@ We refer to [GitHub issues](https://github.com/JabRef/jabref/issues) by using `#
 - The integrity check for person names now also tests that the names are specified in one of the standard BibTeX formats.
 - Links in the Recommended Articles tab (Mr.DLib), when clicked, are now opened in the system's default browser. [2931](https://github.com/JabRef/jabref/issues/2931)
 - We improved the duplicate checker such that different editions of the same publication are not marked as duplicates. [2960](https://github.com/JabRef/jabref/issues/2960)
+- We added the Spell Check functionality on the tool bar of the edit entry panel. The spell check engine currently uses [Jazzy](http://jazzy.sourceforge.net/) for finding the suggested words when performing the check, but can be changed to a different one.[Spell Check](https://github.com/psolizrodriguez/Open_Source_Project)
 
 ### Fixed
 - We fixed the function "Edit - Copy BibTeX key and link" to pass a hyperlink rather than an HTML statement.

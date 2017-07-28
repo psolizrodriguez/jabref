@@ -26,6 +26,7 @@ import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
@@ -81,6 +82,7 @@ import org.jabref.model.database.BibDatabase;
 import org.jabref.model.entry.BibEntry;
 import org.jabref.model.entry.EntryType;
 import org.jabref.model.util.JazzySpellChecker;
+import org.jabref.model.util.SpellCheckAbstract;
 import org.jabref.model.util.SpellCheckerRecord;
 import org.jabref.preferences.JabRefPreferences;
 
@@ -820,21 +822,22 @@ public class EntryEditor extends JPanel implements EntryContainer {
 
     private class SpellCheckerAction extends AbstractAction {
 
-        JazzySpellChecker jazzySpellChecker = null;
-        SpellCheckerDialog dialog;
+        // Object that helps processing the words with a spell check
+        SpellCheckAbstract spellChecker = null;
+        // Graphic User Interface to perform the spell check
+        JDialog dialog;
 
         private SpellCheckerAction() {
             super(Localization.lang("Spell_Check"), IconTheme.JabRefIcon.SPELLCHECK.getIcon());
             putValue(Action.SHORT_DESCRIPTION, Localization.lang("Spell_Check"));
-            jazzySpellChecker = new JazzySpellChecker();
-
+            spellChecker = new JazzySpellChecker();
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println(panel.getCurrentEditor().getEntry().getFieldMap());
-            // 1. Perform a Spell Check on the fields that contains any kind of text
-            List<SpellCheckerRecord> allErrors = jazzySpellChecker.performSpellCheck(panel.getCurrentEditor().getEntry().getFieldMap());
+            // Performs a Spell Check on the fields that contains any kind of text
+            List<SpellCheckerRecord> allErrors = spellChecker.performSpellCheck(panel.getCurrentEditor().getEntry().getFieldMap());
+            // Displays the dialog to the user
             dialog = new SpellCheckerDialog(frame, panel, entry, allErrors);
             dialog.setVisible(true);
         }

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.jabref.model.util.JazzySpellChecker;
+import org.jabref.model.util.SpellCheckAbstract;
 
 import com.swabunga.spell.engine.SpellDictionaryHashMap;
 import com.swabunga.spell.engine.Word;
@@ -17,7 +18,7 @@ import org.junit.Test;
 
 public class EntryEditorSpellCheckerTest {
 
-    JazzySpellChecker jazzySpellChecker;
+    SpellCheckAbstract jazzySpellChecker;
     Map<String, String> currentFields;
     SpellDictionaryHashMap dictionary = null;
     SpellChecker spellChecker = null;
@@ -34,7 +35,7 @@ public class EntryEditorSpellCheckerTest {
     }
 
     @Test
-    public void simpleSpellCheckTest() {
+    public void getSuggestionsReturnsCorrectListOfWords() {
         String[] expectedValues = {"tea", "the", "ten"};
         List<Word> vectorSuggestedValues = spellChecker.getSuggestions("teh", 1);
         String[] suggestedValues = new String[vectorSuggestedValues.size()];
@@ -48,10 +49,19 @@ public class EntryEditorSpellCheckerTest {
     }
 
     @Test
-    public void dictionaryFileTest() throws Exception {
+    public void dictionaryFromFileIsNotNull() throws Exception {
+        //Verify the reader was able to load the dictionary file
         Assert.assertNotNull(reader);
+        //Verify the file has something to read
         Assert.assertTrue(reader.readLine(), true);
     }
 
+    @Test
+    public void wordIsInSuggestionVerifiesWordIsInList() throws Exception {
+        //Verify the word "the" is actually on the list
+        Assert.assertTrue(jazzySpellChecker.wordIsInSuggestion(spellChecker.getSuggestions("teh", 1), "the"));
+        //Verify the word "pensil" is not on the list
+        Assert.assertFalse(jazzySpellChecker.wordIsInSuggestion(spellChecker.getSuggestions("pensil", 1), "pensil"));
+    }
 
 }

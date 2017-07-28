@@ -35,7 +35,7 @@ public class JazzySpellChecker implements SpellCheckAbstract {
             // Create spell check object
             spellChecker = new SpellChecker(dictionary);
         } catch (IOException ioe) {
-            //Verify wea re able to find the file of the dictionary
+            //Verify we are able to find the file of the dictionary
             LOGGER.warn(ioe.getMessage(), ioe);
         }
     }

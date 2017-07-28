@@ -231,4 +231,9 @@ Project: latex2unicode
 URL:     https://github.com/tomtung/latex2unicode
 License: Apache 2.0
 
+Id:      com.swabunga.spell
+Project: Jazzy
+URL:     https://sourceforge.net/projects/jazzy/
+License: LGPL 2.0
+
 The last entry has to end with an empty line. Otherwise the entry is not present in About.html.

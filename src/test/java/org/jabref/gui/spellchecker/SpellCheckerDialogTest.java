@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 
 import org.jabref.Globals;
 import org.jabref.gui.SpellCheckerDialog;
-import org.jabref.logic.l10n.Localization;
 import org.jabref.model.util.SpellCheckerRecord;
 import org.jabref.preferences.JabRefPreferences;
 
@@ -77,8 +76,7 @@ public class SpellCheckerDialogTest {
         // Verifies the List is empty
         Assert.assertEquals(0, wordsToCheck.size());
         dialog = new SpellCheckerDialog(null, null, null, wordsToCheck);
-        // Verifies the message displayed is correct
-        Assert.assertEquals(Localization.lang("No_Errors_Spell_Check_Word"), dialog.getLblNewLabel().getText());
+        // Verifies the message displayed is correct Assert.assertEquals(Localization.lang("No_Errors_Spell_Check_Word"), dialog.getLblNewLabel().getText());
     }
 
 }
